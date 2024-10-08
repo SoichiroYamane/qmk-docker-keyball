@@ -20,7 +20,7 @@ This repository provides a Docker workflow that allows you to build [keyball ðŸŽ
 - Clone this repository:
 
     ```bash
-    git clone xxx
+    git clone https://github.com/SoichiroYamane/qmk-docker-keyball.git
     ```
 
 - Build the Docker image:
