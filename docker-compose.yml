@@ -1,0 +1,13 @@
+services:
+  arch_qmk:
+    image: archlinux:latest
+    platform: linux/amd64
+    restart: no
+    build: .
+    container_name: 'arch_qmk'
+    working_dir: '/root/qmk'
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/root/opt
+
