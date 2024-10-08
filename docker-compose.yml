@@ -1,10 +1,10 @@
 services:
-  arch_qmk:
+  qmk-docker-keyball:
     image: archlinux:latest
     platform: linux/amd64
     restart: no
     build: .
-    container_name: 'arch_qmk'
+    container_name: 'qmk-docker-keyball'
     working_dir: '/root/qmk'
     tty: true
     stdin_open: true
