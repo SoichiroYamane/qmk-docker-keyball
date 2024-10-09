@@ -23,6 +23,8 @@ RUN rm -rf ~/.config/nvim/.git
 
 # Neovim init: not do well so far
 RUN nvim +:q
+# Set nvim as default editor so that yazi can open files in nvim
+RUN set -Ux EDITOR nvim
 
 RUN pacman -S --noconfirm \
   python \
