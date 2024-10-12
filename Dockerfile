@@ -24,7 +24,7 @@ RUN rm -rf ~/.config/nvim/.git
 # Neovim init: not do well so far
 RUN nvim +:q
 # Set nvim as default editor so that yazi can open files in nvim
-RUN set -Ux EDITOR nvim
+RUN fish -c 'set -Ux EDITOR nvim'
 
 RUN pacman -S --noconfirm \
   python \
@@ -41,8 +41,13 @@ RUN pacman -S --noconfirm \
 # clone if keyball directory does not exist
 WORKDIR /root
 RUN [ -d ".keyball" ] || git clone https://github.com/Yowkees/keyball.git .keyball
-# # clone if qmk directory does not exist
-RUN [ -d "qmk" ] || git clone https://github.com/qmk/qmk_firmware.git --depth 1 --recurse-submodules --shallow-submodules -b 0.22.14 qmk
+# clone if qmk directory does not exist
+# The following command noted in keyball guide produced an depth error.
+# RUN [ -d "qmk" ] || git clone https://github.com/qmk/qmk_firmware.git --depth 1 --recurse-submodules --shallow-submodules -b 0.22.14 qmk
+# So I changed the command to the following.
+RUN [ -d "qmk" ] || git clone https://github.com/qmk/qmk_firmware.git --depth 1 -b 0.22.14 qmk
+WORKDIR /root/qmk
+RUN git submodule update --init --recursive --depth 1
 
 WORKDIR /root/qmk
 RUN qmk setup --yes
