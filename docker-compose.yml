@@ -2,7 +2,7 @@ services:
   qmk-docker-keyball:
     image: archlinux:latest
     platform: linux/amd64
-    restart: no
+    restart: 'always'
     build: .
     container_name: 'qmk-docker-keyball'
     working_dir: '/root/qmk'
