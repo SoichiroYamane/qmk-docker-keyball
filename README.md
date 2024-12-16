@@ -26,7 +26,7 @@ This repository provides a Docker workflow that allows you to build [keyball ðŸŽ
 - Build the Docker image:
 
     ```bash
-    docker build up -d --build
+    docker-compose up -d --build
     ```
 
     It takes a while to build. If you have the built image, you can use `docker-compose up -d` to start the container.
