@@ -1,6 +1,7 @@
 services:
   qmk-docker-keyball:
     image: archlinux:latest
+    # Confirm that M1 (arm64) can build the firmware
     platform: linux/amd64
     restart: 'always'
     build: .

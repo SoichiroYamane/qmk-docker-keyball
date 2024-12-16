@@ -1,8 +1,12 @@
 FROM archlinux:latest
 
+RUN pacman-key --init && \
+  pacman-key --populate archlinux && \
+  pacman -Sy archlinux-keyring --noconfirm && \
+  pacman -Syu --noconfirm
+
 # Install necessary packages
-RUN pacman -Syu --noconfirm && \
-  pacman -S --noconfirm \
+RUN pacman -S --noconfirm \
   base-devel \
   curl \
   wget \

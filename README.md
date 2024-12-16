@@ -26,7 +26,7 @@ This repository provides a Docker workflow that allows you to build [keyball ðŸŽ
 - Build the Docker image:
 
     ```bash
-    docker-compose up -d --build
+    docker compose up -d --build
     ```
 
     It takes a while to build. If you have the built image, you can use `docker-compose up -d` to start the container.
@@ -34,7 +34,7 @@ This repository provides a Docker workflow that allows you to build [keyball ðŸŽ
 - Enter the Docker container with fish shell:
 
     ```bash
-    docker-compose exec qmk-docker-keyball fish
+    docker compose exec qmk-docker-keyball fish
     ```
 
 - Build the keyball firmware:
@@ -59,7 +59,7 @@ This repository provides a Docker workflow that allows you to build [keyball ðŸŽ
     Stop and remove the Docker container:
 
     ```bash
-    docker-compose down
+    docker compose down
     ```
 
 - Flash the firmware to your keyball:
@@ -94,11 +94,11 @@ Execute the following commands in your host machine.
 - Compile the firmware in the Docker container
 
     ```bash
-    docker-compose up -d
-    docker-compose exec qmk-docker-keyball fish
+    docker compose up -d
+    docker compose exec qmk-docker-keyball fish
     make SKIP_GIT=yes keyball/keyball39:custom
     exit
-    docker-compose down
+    docker compose down
     ```
 
 - Flash the firmware to your keyball:
