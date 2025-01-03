@@ -2,6 +2,10 @@
 
 This repository provides a Docker workflow that allows you to build [keyball 🎱](https://github.com/Yowkees/keyball) firmware based on [qmk-firmware](https://github.com/qmk/qmk_firmware) without having to install any dependencies on your local machine. This enables you to build keyball firmware on any platform that supports Docker, including Windows, macOS, and Linux.
 
+## 📝 日本語での記事
+
+[Dockerで始めるkeyball用QMK](https://zenn.dev/soichiro_yamane/articles/qmk-docker-keyball-init)
+
 ## ✨ Features
 
 - **Cross-platform 🖥️**: Build keyball 39, 44, and 61 firmware on any platform that supports Docker.
